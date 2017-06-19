@@ -16,7 +16,7 @@ explevels = ['is an expert in', 'is mediocre at', 'studies', 'regularly makes us
 'teaches at the university about', 'purrs when thinking of', 'misuses']
 
 def catction():
-    return "Test tweet! {0} the {1} {2} {3}.".format(
+    return "{0} the {1} {2} {3}.".format(
         re.sub("\d+ ","", random.choice(science.minor_planets["minor_planets"])),
         random.choice(animals.cats["cats"]),
         random.choice(explevels),
