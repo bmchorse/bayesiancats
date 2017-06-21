@@ -3,6 +3,7 @@
 
 import tweepy
 import time
+import re
 from secrets import *
 from pycorpora import animals, technology, science
 import random
