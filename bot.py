@@ -37,12 +37,21 @@ explevels = ['is an expert in', 'is mediocre at', 'studies', 'regularly makes us
 'can lecture at length on', 'could write a book on',
 'teaches at the university about', 'purrs when thinking of', 'misuses']
 
+# Add some statistics
+statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regression', 
+'least-squares regression', 'uninformative priors', 'Monte Carlo methods', 'Markov Chain Monte Carlo',
+'rejection sampling', 'Theano', 'scikit-learn', 'simulated annealing', 'Metropolis-Hastings', 
+'hierarchical modeling', 'Gibbs sampling', 'model comparison', 'expectation maximization',
+'Bayesian stats', 'Bayesian inference', 'Gaussian mixture models']
+
+topics = technology.computer_sciences['computer_sciences'] + statsterms
+
 def catction():
     return "{0} the {1} {2} {3}.".format(
         re.sub("\d+ ","", random.choice(science.minor_planets["minor_planets"])),
         random.choice(fullcats),
         random.choice(explevels),
-        random.choice(technology.computer_sciences['computer_sciences']))
+        random.choice(topics))
 
 while True:
     mytweet = catction()
