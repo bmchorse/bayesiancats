@@ -37,6 +37,25 @@ explevels = ['is an expert in', 'is mediocre at', 'studies', 'regularly makes us
 'can lecture at length on', 'could write a book on',
 'teaches at the university about', 'purrs when thinking of', 'misuses']
 
+topics = technology.computer_sciences['computer_sciences']
+
+# Thin the technology list a little
+droptopics = ['AIM', 'Algol', 'Amazon', 'AppStream', 'ASPnet', 'Aviato',
+'Backbone', 'Bootstrap', 'Bower', 'Browserify', 'Bundler', 'Capistrano',
+'ClearDB', 'CloudFormation', 'CloudFront', 'CloudSearch', 'CloudTrail',
+'CloudWatch', 'COBOL', 'Cognito', 'CrunchBang', 'Cucumber', 'Dart', 'Diaspora', 
+'Discourse', 'EBS', 'EC2', 'EJS', 'ElasticBeanstalk', 'ElasticSearch', 'ERB',
+'Express', 'Fedora', 'Foundation', 'Ghost', 'Glacier', 'Grunt', 'HacketyHack',
+'ICQ', 'ImageMagick', 'IRB', 'IronCache', 'Jasmine', 'Jekyll', 'KeenIO', 
+'Kickstarter', 'Knockout', 'LeapMotion', 'Lyft', 'Middleman', 'Mocha', 'NewRelic',
+'Nginx', 'NLTK', 'Nokogiri', 'NPM', 'Objective-C', 'OCR', 'Octopress', 'Pandora',
+'Passenger', 'PGP', 'PIP', 'Polymer', 'Processing', 'PubNub', 'Redis',
+'Refinery', 'Route53', 'Rspec', 'Sendgrid', 'SES', 'Silverlight', 'Sinatra',
+'SNS', 'Solr', 'SpoonRocket', 'SWF', 'TCP', 'Uber', 'Ubuweb', 'Unicorn',
+'Webaudio', 'Webrick', 'Websockets', 'XTags', 'Yahoo', 'Yelp', 'Zepto']
+
+trimmedtopics = [t for t in topics if t not in droptopics]
+
 # Add some statistics
 statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regression', 
 'least-squares regression', 'uninformative priors', 'Monte Carlo methods', 'Markov Chain Monte Carlo',
@@ -44,14 +63,14 @@ statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regress
 'hierarchical modeling', 'Gibbs sampling', 'model comparison', 'expectation maximization',
 'Bayesian stats', 'Bayesian inference', 'Gaussian mixture models']
 
-topics = technology.computer_sciences['computer_sciences'] + statsterms
+fulltopics = trimmedtopics + statsterms
 
 def catction():
     return "{0} the {1} {2} {3}.".format(
         re.sub("\d+ ","", random.choice(science.minor_planets["minor_planets"])),
         random.choice(fullcats),
         random.choice(explevels),
-        random.choice(topics))
+        random.choice(fulltopics))
 
 while True:
     mytweet = catction()
