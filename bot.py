@@ -1,12 +1,12 @@
 # A twitter bot to write mashups of cats and stats.
 # Framework influenced strongly by https://github.com/molly/twitterbot_framework
 
-import tweepy
-import time
-import re
-from secrets import *
-from pycorpora import animals, technology, science
 import random
+import re
+import time
+import tweepy
+from pycorpora import animals, technology, science
+from secrets import *
 
 auth = tweepy.OAuthHandler(C_KEY, C_SECRET) 
 auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)  
