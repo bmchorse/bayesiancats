@@ -12,7 +12,7 @@ api = tweepy.API(auth)
 
 explevels = ['is an expert in', 'is mediocre at', 'studies', 'regularly makes use of', 'is a power-user of',
 'has an inordinate fondness for', 'flicks a tail at', 'has several degrees in', 'relaxes by thinking about',
-'can lecture at length on', 'has an avocation doing', 'could write a book on',
+'can lecture at length on', 'could write a book on',
 'teaches at the university about', 'purrs when thinking of', 'misuses']
 
 def catction():
