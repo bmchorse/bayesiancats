@@ -2,6 +2,7 @@
 # Framework influenced strongly by https://github.com/molly/twitterbot_framework
 
 import tweepy
+import time
 from secrets import *
 from pycorpora import animals, technology, science
 import random
@@ -43,7 +44,7 @@ def catction():
         random.choice(explevels),
         random.choice(technology.computer_sciences['computer_sciences']))
 
-mytweet = catction()
-print(mytweet)
-
-api.update_status(mytweet)
+while True:
+    mytweet = catction()
+    api.update_status(mytweet)
+    time.sleep(1800)
