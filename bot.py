@@ -41,14 +41,16 @@ explevels = ['is an expert in', 'is mediocre at', 'studies', 'regularly makes us
 topics = technology.computer_sciences['computer_sciences']
 
 # Thin the technology list a little
-droptopics = ['AIM', 'Algol', 'Amazon', 'AppStream', 'ASPnet', 'Aviato',
+droptopics = ['ActionScript', 'ActiveRecord', 'AIM', 'Algol', 'Amazon', 
+'AppStream', 'ASPnet', 'Aviato', 'AWS', 'BASIC',
 'Backbone', 'Bootstrap', 'Bower', 'Browserify', 'Bundler', 'Capistrano',
-'ClearDB', 'CloudFormation', 'CloudFront', 'CloudSearch', 'CloudTrail',
-'CloudWatch', 'COBOL', 'Cognito', 'CrunchBang', 'Cucumber', 'Dart', 'Diaspora', 
-'Discourse', 'EBS', 'EC2', 'EJS', 'ElasticBeanstalk', 'ElasticSearch', 'ERB',
-'Express', 'Fedora', 'Foundation', 'Ghost', 'Glacier', 'Grunt', 'HacketyHack',
+'Cassandra', 'ClearDB', 'CloudFormation', 'CloudFront', 'CloudSearch', 'CloudTrail',
+'CloudWatch', 'CodeCommit', 'CodeDeploy', 'CodePipeline', 'COBOL', 'CoffeeScript', 
+'Cognito', 'CouchDB', 'CrunchBang', 'Cucumber', 'Dart', 'Diaspora', 
+'Discourse', 'EBS', 'EC2', 'EJS', 'ElasticBeanstalk', 'ElasticSearch', 'Ember', 'ERB',
+'Express', 'Facebook', 'Fedora', 'Foundation', 'Foursquare', 'Ghost', 'Glacier', 'Grunt', 'HacketyHack',
 'ICQ', 'ImageMagick', 'IRB', 'IronCache', 'Jasmine', 'Jekyll', 'KeenIO', 
-'Kickstarter', 'Knockout', 'LeapMotion', 'Lyft', 'Middleman', 'Mocha', 'NewRelic',
+'Kickstarter', 'Knockout', 'LeapMotion', 'Lyft', 'MariaDB', 'Middleman', 'Minitest', 'Mocha', 'NewRelic',
 'Nginx', 'NLTK', 'Nokogiri', 'NPM', 'Objective-C', 'OCR', 'Octopress', 'Pandora',
 'Passenger', 'PGP', 'PIP', 'Polymer', 'Processing', 'PubNub', 'Redis',
 'Refinery', 'Route53', 'Rspec', 'Sendgrid', 'SES', 'Silverlight', 'Sinatra',
@@ -64,7 +66,7 @@ statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regress
 'hierarchical modeling', 'Gibbs sampling', 'model comparison', 'expectation maximization',
 'Bayesian stats', 'Bayesian inference', 'Gaussian mixture models']
 
-fulltopics = trimmedtopics + statsterms
+fulltopics = trimmedtopics + (statsterms*2) # Make extra stats terms
 
 def catction():
     return "{0} the {1} {2} {3}.".format(
