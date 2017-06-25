@@ -61,10 +61,13 @@ trimmedtopics = [t for t in topics if t not in droptopics]
 
 # Add some statistics
 statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regression', 
-'least-squares regression', 'uninformative priors', 'Monte Carlo methods', 'Markov Chain Monte Carlo',
+'least-squares regression', 'uninformative priors', 'Monte Carlo methods', 'Markov chain Monte Carlo',
 'rejection sampling', 'Theano', 'scikit-learn', 'simulated annealing', 'Metropolis-Hastings', 
 'hierarchical modeling', 'Gibbs sampling', 'model comparison', 'expectation maximization',
-'Bayesian stats', 'Bayesian inference', 'Gaussian mixture models']
+'Bayesian stats', 'Bayesian inference', 'Gaussian mixture models', 'conjugate priors',
+'maximum entropy', 'empirical Bayes', 'discriminant analysis', 'logistic regression',
+'ramdon forests', 'confusion matrices', 'hyperpriors (and it\'s turtles all the way down)',
+'marginal likelihoods', 'confidence interval calculation', 'power calculations']
 
 fulltopics = trimmedtopics + (statsterms*2) # Make extra stats terms
 
