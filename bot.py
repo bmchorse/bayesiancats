@@ -66,7 +66,7 @@ statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regress
 'hierarchical modeling', 'Gibbs sampling', 'model comparison', 'expectation maximization',
 'Bayesian stats', 'Bayesian inference', 'Gaussian mixture models', 'conjugate priors',
 'maximum entropy', 'empirical Bayes', 'discriminant analysis', 'logistic regression',
-'ramdon forests', 'confusion matrices', 'hyperpriors (and it\'s turtles all the way down)',
+'random forests', 'confusion matrices', 'hyperpriors (and it\'s turtles all the way down)',
 'marginal likelihoods', 'confidence interval calculation', 'power calculations']
 
 fulltopics = trimmedtopics + (statsterms*2) # Make extra stats terms
