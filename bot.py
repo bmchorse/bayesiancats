@@ -78,7 +78,12 @@ def catction():
         random.choice(explevels),
         random.choice(fulltopics))
 
+def testlength(tweet):
+    if len(tweet) <= 140:
+        return True
+
 while True:
     mytweet = catction()
-    api.update_status(mytweet)
+    if testlength(mytweet):
+        api.update_status(mytweet)
     time.sleep(1800)
