@@ -7,6 +7,7 @@ import time
 import tweepy
 from pycorpora import animals, technology, science
 from secrets import *
+from BayesianMadLibs import *
 
 auth = tweepy.OAuthHandler(C_KEY, C_SECRET) 
 auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)  
@@ -71,6 +72,10 @@ statsterms = ['Bayesian analyis', 'stochastic gradient descent', 'linear regress
 
 fulltopics = trimmedtopics + (statsterms*2) # Make extra stats terms
 
+def testlength(tweet):
+    if len(tweet) <= 140:
+        return True
+
 def catction():
     return "{0} the {1} {2} {3}.".format(
         re.sub("\d+ ","", random.choice(science.minor_planets["minor_planets"])),
@@ -78,12 +83,19 @@ def catction():
         random.choice(explevels),
         random.choice(fulltopics))
 
-def testlength(tweet):
-    if len(tweet) <= 140:
-        return True
+def picktweet():
+    lengthpass = False
+
+    while lengthpass == False:
+        choose = random.randint(0,1)
+        if choose == 0:
+            atweet = catction()
+        else:
+            atweet = BayesianCatsMadLibs.randomFilledSentence()
+        if testlength(atweet):
+            return atweet
 
 while True:
-    mytweet = catction()
-    if testlength(mytweet):
-        api.update_status(mytweet)
+    mytweet = picktweet()
+    print(mytweet)
     time.sleep(1800)
