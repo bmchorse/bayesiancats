@@ -2,7 +2,8 @@
 
 Current
 - B: tidy MadLibs code
-- G: catLibs (to add to BayesLibs)
+- G: DONE catLibs (to add to BayesLibs) - tested code on Anaconda but not after integrating
+- B: make sure catLibs works on Twitter  
 
 MARKOV
 - Grab an initial Bayesian and cat corpus/corpora
@@ -12,6 +13,9 @@ MARKOV
 MADLIBS
 - Parts of speech, maybe with topia.termextract?
 - Markov chains?
+
+SOMETHING AI
+- G: I'll think of something to add as a module or an improvement to existing
 
 ETC
 - Running externally
