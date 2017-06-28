@@ -98,4 +98,5 @@ def picktweet():
 while True:
     mytweet = picktweet()
     print(mytweet)
+    api.update_status(mytweet)
     time.sleep(1800)
