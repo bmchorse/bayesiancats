@@ -141,29 +141,3 @@ BayesianSentence5=MadLibsSentence(s5,POSDict5, POSDictCats)
 
 #put Bayesian MadLibs sentences into BayesianCatsMadLibs
 BayesianCatsMadLibs.sentences=[BayesianSentence1,BayesianSentence2,BayesianSentence3,BayesianSentence4,BayesianSentence5]
-
-###########################
-# test code with calls to BayesianCatsMadLibs methods randomSentence(N=0),  randomFilledSentence, fillIndexedSentence(index=0,N=1)
-
-#fill indexed sentences
-for i in range(0,5):
-    a=BayesianCatsMadLibs.fillIndexedSentence(i)
-    print(a)
-a=BayesianCatsMadLibs.fillIndexedSentence(1,2)
-for s in a:
-    print(s)
-
-#random sentence
-a=BayesianCatsMadLibs.randomSentence(3)
-print(a[2].sentenceOriginal)
-a=BayesianCatsMadLibs.randomSentence()
-print(a.sentenceOriginal)
-
-#random filled sentences
-for i in range(0,5):
-    print(BayesianCatsMadLibs.randomFilledSentence())
-a=BayesianCatsMadLibs.randomFilledSentence(3)
-print('a[0]:',a[0])
-print('a:',a)
-for sentence in a:
-    print (sentence)
