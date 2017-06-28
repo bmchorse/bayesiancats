@@ -99,6 +99,7 @@ class MadLibs:
             return filledList
 
 # Create BayesianCatsMadLibs (instance of MadLibs) and fill with Bayesian sentences (MadLibsSentences)
+# Bayesian sentences with cat noun replacements
 
 BayesianCatsMadLibs=MadLibs()
 
@@ -141,3 +142,52 @@ BayesianSentence5=MadLibsSentence(s5,POSDict5, POSDictCats)
 
 #put Bayesian MadLibs sentences into BayesianCatsMadLibs
 BayesianCatsMadLibs.sentences=[BayesianSentence1,BayesianSentence2,BayesianSentence3,BayesianSentence4,BayesianSentence5]
+
+
+#Cat Sentences with Bayesian Replacements
+
+#define Bayesian word lists to draw replacements from
+BayesianNouns = POSWordList("noun",['posterior distribution','Metropolis-Hastings algorithm','inference','prior','model choice','likelihood function','Bayesian inference','sequential analysis','hypothesis testing','algorithm','Gibbs sampling','probability','conditional probability','inference','linear regression'])
+BayesianPluralNouns=POSWordList("plural noun",['Bayesian statistics','priors','hypotheses','Markov Chain techniques', 'parameters','Bayesian methods','probabilities'])
+POSDictBayesian={BayesianNouns.POS:BayesianNouns.wordList,BayesianPluralNouns.POS:BayesianPluralNouns.wordList}
+
+#define five cat MadLibs sentences
+s1='A hybrid of a domestic feline and a medium size African wild cat, the Savanna is a challenging and rewarding companion.'
+n1=POSWordList('noun',['feline', 'wild cat', 'Savanna'])
+np1=POSWordList('plural noun',[])
+POSDict1={n1.POS:n1.wordList,np1.POS:np1.wordList}
+catSentence1=MadLibsSentence(s1,POSDict1, POSDictBayesian)
+
+s2='Banned in some parts of the United States, the Savannah elicits behavior not unlike that of its cheetah cousin.'
+n2=POSWordList('noun',['Savannah','cheetah cousin'])
+np2=POSWordList('plural noun',['behavior'])
+POSDict2={n2.POS:n2.wordList,np2.POS:np2.wordList}
+catSentence2=MadLibsSentence(s2,POSDict2, POSDictBayesian)
+
+s3='Savannahs are noted for their tall and slender bodies and their large ears.'
+n3=POSWordList('noun',[])
+np3=POSWordList('plural noun',['bodies','ears'])
+POSDict3={n3.POS:n3.wordList,np3.POS:np3.wordList}
+catSentence3=MadLibsSentence(s3,POSDict3, POSDictBayesian)
+
+s4='We have controlled our breeding process down to an exact science so everyone receives the perfect pet for their household.'
+n4=POSWordList('noun',['breeding process','science','pet'])
+np4=POSWordList('plural noun',[])
+POSDict4={n4.POS:n4.wordList,np4.POS:np4.wordList}
+catSentence4=MadLibsSentence(s4,POSDict4, POSDictBayesian)
+
+s5='The carefully refined modern Siamese is characterized by blue almond-shaped eyes, a triangular head shape and a muscular body.'
+n5=POSWordList('noun',['Siamese','head shape','body'])
+np5=POSWordList('plural noun',['eyes'])
+POSDict5={n5.POS:n5.wordList,np5.POS:np5.wordList}
+catSentence5=MadLibsSentence(s5,POSDict5, POSDictBayesian)
+
+s6='The Abyssinian, a breed of domestic short-haired cat, has a distinctive tabby coat, with individual hairs banded with different colors.'
+n6=POSWordList('noun',['Abyssinian','short-haired cat','tabby coat'])
+np6=POSWordList('plural noun',['hairs','colors'])
+POSDict6={n6.POS:n6.wordList,np6.POS:np6.wordList}
+catSentence6=MadLibsSentence(s6,POSDict6, POSDictBayesian)
+
+#put cat MadLibs sentences into BayesianCatsMadLibs (we could separate the cat and Bayesian kinds if we wanted to weight them but this should leave your existing code working)
+BayesianCatsMadLibs.sentences=BayesianCatsMadLibs.sentences+[catSentence1,catSentence2,catSentence3,catSentence4,catSentence5, catSentence6]
+
