@@ -87,7 +87,7 @@ def picktweet():
     lengthpass = False
 
     while lengthpass == False:
-        choose = random.randint(0,1)
+        choose = random.randint(0,2)
         if choose == 0:
             atweet = catction()
         else:
