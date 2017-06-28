@@ -1,8 +1,8 @@
 # TODO
 
 Current
-- B: bring Madlibs into tweet function
-- G: cat MadLibs
+- B: tidy MadLibs code
+- G: catLibs (to add to BayesLibs)
 
 MARKOV
 - Grab an initial Bayesian and cat corpus/corpora
