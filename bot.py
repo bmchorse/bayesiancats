@@ -85,7 +85,7 @@ def catction():
 
 def picktweet():
     while True:
-        choose = random.randint(0,2)
+        choose = random.randint(0,3)
         if choose == 0:
             atweet = catction()
         else:
