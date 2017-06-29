@@ -84,9 +84,7 @@ def catction():
         random.choice(fulltopics))
 
 def picktweet():
-    lengthpass = False
-
-    while lengthpass == False:
+    while True:
         choose = random.randint(0,2)
         if choose == 0:
             atweet = catction()
