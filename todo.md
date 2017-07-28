@@ -1,7 +1,7 @@
 # TODO
 
 Current
-- B: tidy Cat/MadLibs code
+- B: tidy Cat/MadLibs code (note: adding a method for adding sentences in big/simple chunks would be nice.)
 
 MARKOV
 - Grab an initial Bayesian and cat corpus/corpora
