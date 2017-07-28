@@ -104,8 +104,11 @@ class MadLibs:
 BayesianCatsMadLibs=MadLibs()
 
 #define cat word lists to draw replacements from
-catNouns = POSWordList("noun",['laser pointer', 'scratching post', 'bird', 'mouse', 'lap', 'hiss', 'meow', 'stretch', 'tail twitch', 'ball of string', 'feather toy', 'window sill', 'box', 'tree'])
-catPluralNouns=POSWordList("plural noun",['fish', 'socks', 'salmon treats', 'cat beds', 'litter boxes', 'paws', 'claws', 'feathers', 'birds'])
+catNouns = POSWordList("noun",['laser pointer', 'scratching post', 'bird', 'mouse', 'lap', 
+'hiss', 'meow', 'stretch', 'tail twitch', 'ball of string', 'feather toy', 'window sill', 
+'box', 'tree', 'purr', 'hairball', 'cat nap', 'catnip', 'whisker'])
+catPluralNouns=POSWordList("plural noun",['fish', 'socks', 'salmon treats', 'cat beds', 
+'litter boxes', 'paws', 'claws', 'feathers', 'birds', 'whiskers', 'shredded toilet paper'])
 POSDictCats={catNouns.POS:catNouns.wordList,catPluralNouns.POS:catPluralNouns.wordList}
 
 #define five Bayesian MadLibs sentences
@@ -140,8 +143,15 @@ np5=POSWordList('plural noun',['methods','networks','data'])
 POSDict5={n5.POS:n5.wordList,np5.POS:np5.wordList}
 BayesianSentence5=MadLibsSentence(s5,POSDict5, POSDictCats)
 
+s6='Hierarchical modeling is used when a information is available on several different levels of observational units.'
+# no singular noun
+n6=POSWordList('noun',['information'])
+np6=POSWordList('plural noun', ['units'])
+POSDict6={n6.POS:n6.wordList,np6.POS:np6.wordList}
+BayesianSentence6=MadLibsSentence(s6, POSDict6, POSDictCats)
+
 #put Bayesian MadLibs sentences into BayesianCatsMadLibs
-BayesianCatsMadLibs.sentences=[BayesianSentence1,BayesianSentence2,BayesianSentence3,BayesianSentence4,BayesianSentence5]
+BayesianCatsMadLibs.sentences=[BayesianSentence1,BayesianSentence2,BayesianSentence3,BayesianSentence4,BayesianSentence5,BayesianSentence6]
 
 
 #Cat Sentences with Bayesian Replacements
@@ -188,6 +198,7 @@ np6=POSWordList('plural noun',['hairs','colors'])
 POSDict6={n6.POS:n6.wordList,np6.POS:np6.wordList}
 catSentence6=MadLibsSentence(s6,POSDict6, POSDictBayesian)
 
-#put cat MadLibs sentences into BayesianCatsMadLibs (we could separate the cat and Bayesian kinds if we wanted to weight them but this should leave your existing code working)
+#put cat MadLibs sentences into BayesianCatsMadLibs (we could separate the cat and Bayesian kinds if
+# we wanted to weight them but this should leave your existing code working)
 BayesianCatsMadLibs.sentences=BayesianCatsMadLibs.sentences+[catSentence1,catSentence2,catSentence3,catSentence4,catSentence5, catSentence6]
 
